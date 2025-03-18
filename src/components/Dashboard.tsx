@@ -1,21 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../store/store';
 import { useServicesStore } from '../store/servicesStore'
 
 const Dashboard: React.FC = () => {
     const navigate = useNavigate();
-    const { token } = useAuthStore();
     const { categories } = useServicesStore(); // Usa el store
 
     const handleServiceSelect = (categoryId: string) => {
         if (categoryId === "barbershop") {
-            if (!token) {
-                localStorage.setItem("redirectAfterLogin", `/service/${categoryId}`);
-                navigate("/login");
-            } else {
-                navigate(`/service/${categoryId}`);
-            }
+            // Permite acceso a la barbería sin necesidad de login
+            navigate(`/company`);
         } else {
             alert("Este servicio estará disponible próximamente. ¡Estamos trabajando en ello!");
         }

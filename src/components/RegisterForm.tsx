@@ -10,7 +10,8 @@ export default function RegisterForm() {
         nombre: '',
         correo: '',
         clave: '',
-        tipo_usuario: 'USUARIO'
+        tipo_usuario: 'USUARIO',
+        telefono: 0
     })
     const [message, setMessage] = useState('')
 

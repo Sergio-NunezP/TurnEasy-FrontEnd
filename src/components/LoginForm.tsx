@@ -32,7 +32,6 @@ export default function LoginForm() {
 
             // Verificamos que el token existe después del login
             const authToken = localStorage.getItem("authToken");
-            console.log("Token después de login:", authToken);
 
             if (authToken && authToken !== "undefined" && authToken !== "null") {
                 setMessage('Login exitoso');
